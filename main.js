@@ -1,9 +1,10 @@
-var request = new XMLHttpRequest()
+let request = new XMLHttpRequest()
 
-request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+
 request.onload = function () {
   // Begin accessing JSON data here
-  var data = JSON.parse(this.response)
+  let data = JSON.parse(this.response)
 
   if (request.status >= 200 && request.status < 400) {
     data.forEach((movie) => {
@@ -15,3 +16,14 @@ request.onload = function () {
 }
 
 request.send()
+
+const app = document.querySelector("#root");
+const logo = document.createElement('img');
+
+logo.src = "logo.png";
+
+const container = document.createElement('div');
+container.setAttribute('class', 'container');
+
+
+app.appendChild(logo);
